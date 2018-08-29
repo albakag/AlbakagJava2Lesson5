@@ -1,4 +1,4 @@
-public class Main{
+public class Main {
 
     static final int SIZE = 10_000_000;
     static final int h = SIZE / 2;
@@ -30,7 +30,7 @@ public class Main{
         }
 
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = (float)(arr[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
+            arr[i] = (float) (arr[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
         }
 
         System.out.println(System.currentTimeMillis() - a);
@@ -40,8 +40,8 @@ public class Main{
     //(Выигрыш по времени в сравнении с первым методом, примерно в сотню раз)
     private void methodTwo() {
 
-        float [] a1 = new float[h];
-        float [] a2 = new float[h];
+        float[] a1 = new float[h];
+        float[] a2 = new float[h];
 
         long a = System.currentTimeMillis();
 
@@ -57,7 +57,7 @@ public class Main{
             @Override
             public void run() {
                 for (int i = 0; i < a1.length; i++) {
-                a1[i] = (float)(a1[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
+                    a1[i] = (float) (a1[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
                 }
             }
         });
@@ -66,7 +66,7 @@ public class Main{
             @Override
             public void run() {
                 for (int i = 0; i < a2.length; i++) {
-                    a2[i] = (float)(a2[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
+                    a2[i] = (float) (a2[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
                 }
             }
         });
